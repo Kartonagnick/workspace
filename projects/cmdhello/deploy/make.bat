@@ -14,13 +14,13 @@ rem =========================================================================
     set "IDE=msvc2019:64:debug:dynamic"
     set "order=all"
 
-    rem call :runVersion
+    call :runVersion
     rem call :runUpdate
     rem call :runInitial
     rem call :cleanBuild
     rem call :generateCmakeMakeFiles
     rem call :buildCmakeMakeFiles
-    rem call :installCmakeMakeFiles
+    call :installCmakeMakeFiles
     call :runTest
 
     rem call :runVisualStudio
