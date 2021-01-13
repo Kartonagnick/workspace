@@ -6,21 +6,18 @@ rem ============================================================================
 :main
     setlocal
 
-    set "eDEBUG=ON"
-    set "eDIR_BAT_SCRIPTS=%eDIR_WORKSPACE%\scripts\bat"
-    set "eDIR_BAT_ENGINE=%eDIR_BAT_SCRIPTS%\engine"
-
+    rem set "eDEBUG=ON"
     set "IDE=msvc2019:64:debug:dynamic"
-    set "order=all"
+    set "order=%IDE%"
 
-    call :runVersion
+    rem call :runVersion
     rem call :runUpdate
     rem call :runInitial
     rem call :cleanBuild
     rem call :generateCmakeMakeFiles
     rem call :buildCmakeMakeFiles
-    rem call :installCmakeMakeFiles
-    call :runTest
+    call :installCmakeMakeFiles
+    call :runTests
 
     rem call :runVisualStudio
     rem call :runQtCreator
@@ -40,7 +37,7 @@ exit /b
     call "%eDIR_BAT_ENGINE%\run.bat" --initial
 exit /b
 
-:runTest
+:runTests
     call "%eDIR_BAT_ENGINE%\run.bat" ^
         "--runTests: *.exe"          ^
         "--exclude: mingw*-dynamic"  ^
@@ -139,6 +136,10 @@ exit /b
 rem ============================================================================
 rem ============================================================================
 
+:normalize
+    set "%~1=%~dpfn2"
+exit /b
+
 :checkParent
     if errorlevel 1 (
         @echo [ERROR] was broken at launch
@@ -153,11 +154,13 @@ rem ============================================================================
         @echo [ERROR] 'WorkSpace' not found
         exit /b 1
     )
+    if not defined eDIR_BAT_SCRIPTS (
+        set "eDIR_BAT_SCRIPTS=%eDIR_WORKSPACE%\scripts\bat"
+    )
+    if not defined eDIR_BAT_ENGINE (
+        set "eDIR_BAT_ENGINE=%eDIR_BAT_SCRIPTS%\engine"
+    )
 exit /b 0
-
-:normalize
-    set "%~1=%~dpfn2"
-exit /b
 
 rem ============================================================================
 rem ============================================================================
