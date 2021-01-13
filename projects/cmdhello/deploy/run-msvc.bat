@@ -8,10 +8,7 @@ rem ============================================================================
 :main
     setlocal
 
-    set "eDEBUG=ON"
-    set "eDIR_BAT_SCRIPTS=%eDIR_WORKSPACE%\scripts\bat"
-    set "eDIR_BAT_ENGINE=%eDIR_BAT_SCRIPTS%\engine"
-
+    rem set "eDEBUG=ON"
     set "order=msvc2019:64:debug:dynamic"
 
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
@@ -69,6 +66,10 @@ exit /b
 rem ============================================================================
 rem ============================================================================
 
+:normalize
+    set "%~1=%~dpfn2"
+exit /b
+
 :checkParent
     if errorlevel 1 (
         @echo [ERROR] was broken at launch
@@ -83,11 +84,13 @@ rem ============================================================================
         @echo [ERROR] 'WorkSpace' not found
         exit /b 1
     )
+    if not defined eDIR_BAT_SCRIPTS (
+        set "eDIR_BAT_SCRIPTS=%eDIR_WORKSPACE%\scripts\bat"
+    )
+    if not defined eDIR_BAT_ENGINE (
+        set "eDIR_BAT_ENGINE=%eDIR_BAT_SCRIPTS%\engine"
+    )
 exit /b 0
-
-:normalize
-    set "%~1=%~dpfn2"
-exit /b
 
 rem ============================================================================
 rem ============================================================================

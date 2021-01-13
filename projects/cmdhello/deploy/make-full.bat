@@ -7,12 +7,10 @@ rem ============================================================================
     setlocal
 
     set "eDEBUG=ON"
-    set "eDIR_BAT_SCRIPTS=%eDIR_WORKSPACE%\scripts\bat"
-    set "eDIR_BAT_ENGINE=%eDIR_BAT_SCRIPTS%\engine"
-    set "PREFIX={DIR_SOURCES}\deploy"
-
+    rem set "PREFIX={DIR_OWNER}"
+    set "PREFIX={DIR_SOURCE}\deploy"
     set "IDE=msvc2019:64:debug:dynamic"
-    set "order=msvc2019:64:debug:dynamic"
+    set "order=%IDE%"
 
     rem call :runVersion
     rem call :runUpdate
@@ -20,8 +18,8 @@ rem ============================================================================
     rem call :cleanBuild
     rem call :generateCmakeMakeFiles
     rem call :buildCmakeMakeFiles
-    rem call :installCmakeMakeFiles
-    call :runTest
+    call :installCmakeMakeFiles
+    call :runTests
 
     rem call :runVisualStudio
     rem call :runQtCreator
@@ -41,7 +39,7 @@ exit /b
     call "%eDIR_BAT_ENGINE%\run.bat" --initial
 exit /b
 
-:runTest
+:runTests
     call "%eDIR_BAT_ENGINE%\run.bat" ^
         "--runTests: *.exe"          ^
         "--exclude: mingw*-dynamic"  ^
@@ -68,6 +66,7 @@ rem ............................................................................
 :runVisualStudio
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--runIDE: VisualStudio"      ^
+        "--dir_build: %PREFIX%\build" ^
         "--configurations: %IDE%"
 exit /b
 
@@ -76,7 +75,7 @@ rem ............................................................................
 :generateCmakeMakeFiles
     call "%eDIR_BAT_ENGINE%\run.bat"       ^
         "--generate: cmake-makefiles"      ^
-        "--dir_sources: {DIR_SOURCES}"     ^
+        "--dir_sources: {DIR_SOURCE}"      ^
         "--dir_project: %PREFIX%\cmake"    ^
         "--dir_build:   %PREFIX%\build"    ^
         "--dir_product: %PREFIX%\product"  ^
@@ -90,7 +89,7 @@ rem ............................................................................
 :buildCmakeMakeFiles
     call "%eDIR_BAT_ENGINE%\run.bat"       ^
         "--build: cmake-makefiles"         ^
-        "--dir_sources: {DIR_SOURCES}"     ^
+        "--dir_sources: {DIR_SOURCE}"      ^
         "--dir_project: %PREFIX%\cmake"    ^
         "--dir_build:   %PREFIX%\build"    ^
         "--dir_product: %PREFIX%\product"  ^
@@ -104,7 +103,7 @@ rem ............................................................................
 :installCmakeMakeFiles
     call "%eDIR_BAT_ENGINE%\run.bat"       ^
         "--install: cmake-makefiles"       ^
-        "--dir_sources: {DIR_SOURCES}"     ^
+        "--dir_sources: {DIR_SOURCE}"      ^
         "--dir_project: %PREFIX%\cmake"    ^
         "--dir_build:   %PREFIX%\build"    ^
         "--dir_product: %PREFIX%\product"  ^
@@ -157,6 +156,10 @@ exit /b
 rem ============================================================================
 rem ============================================================================
 
+:normalize
+    set "%~1=%~dpfn2"
+exit /b
+
 :checkParent
     if errorlevel 1 (
         @echo [ERROR] was broken at launch
@@ -171,11 +174,13 @@ rem ============================================================================
         @echo [ERROR] 'WorkSpace' not found
         exit /b 1
     )
+    if not defined eDIR_BAT_SCRIPTS (
+        set "eDIR_BAT_SCRIPTS=%eDIR_WORKSPACE%\scripts\bat"
+    )
+    if not defined eDIR_BAT_ENGINE (
+        set "eDIR_BAT_ENGINE=%eDIR_BAT_SCRIPTS%\engine"
+    )
 exit /b 0
-
-:normalize
-    set "%~1=%~dpfn2"
-exit /b
 
 rem ============================================================================
 rem ============================================================================
