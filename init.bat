@@ -199,20 +199,14 @@ exit /b
     endlocal & set "PATH=%PATH%"
 exit /b
 
-:checkAvialableGit
-    set "OLDPATH=%PATH%"
-    set "PATH=%eDIR_GIT%;%PATH%"
-    where "git.exe" >nul 2>nul
-    if errorlevel 1 (set "PATH=%OLDPATH%")
-exit /b
-
 :initGit
     if defined ProgramFiles(x86) (
         call :initGit64
     ) else (
         call :initGit32
     )
-    call :checkAvialableGit
+    set "PATH=%eDIR_GIT%;%PATH%"
+    where "git.exe" >nul 2>nul
     if errorlevel 1 (@echo [ENGINE] 'git' not found)
 exit /b
 
@@ -241,20 +235,14 @@ exit /b
     endlocal & set "PATH=%PATH%"
 exit /b
 
-:checkAvialable7Zip
-    set "OLDPATH=%PATH%"
-    set "PATH=%eDIR_GIT%;%PATH%"
-    where "7z.exe" >nul 2>nul
-    if errorlevel 1 (set "PATH=%OLDPATH%")
-exit /b
-
 :init7Zip
     if defined ProgramFiles(x86) (
         call :init7Zip64
     ) else (
         call :init7Zip32
     )
-    call :checkAvialable7Zip
+    set "PATH=%eDIR_GIT%;%PATH%"
+    where "7z.exe" >nul 2>nul
     if errorlevel 1 (@echo [ENGINE] '7z' not found)
 exit /b
 
@@ -282,8 +270,9 @@ rem ============================================================================
     if not defined eDIR_OWNER (
         @echo off & cls & @echo. & @echo.
         call :normalizePath eDIR_OWNER "%~dp0"
+    ) else (
+        call :normalizePath eDIR_OWNER "%eDIR_OWNER%"
     )
-    call :normalizePath eDIR_OWNER "%eDIR_OWNER%"
     call :normalizePath eDIR_WORKSPACE "%~dp0"
 exit /b
 
