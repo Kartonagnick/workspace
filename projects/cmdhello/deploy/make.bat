@@ -100,8 +100,12 @@ rem ============================================================================
     if not defined eWORKSPACE_SYMPTOMS (
         set "eWORKSPACE_SYMPTOMS=3rd_party;programs"
     ) 
-    set "DRIVE=%CD:~0,3%"
-    pushd "%CD%"
+    setlocal
+    set "dir_start=%~1"
+    if not defined dir_start (set "dir_start=%CD%")
+    if not exist "%dir_start%" (goto :findWorkspaceFailed)
+    set "DRIVE=%dir_start:~0,3%"
+    pushd "%dir_start%" 
 :loopFindWorkspace
     call :checkWorkspaceSymptoms
     if not errorlevel 1    (goto :findWorkspaceSuccess)
@@ -111,9 +115,9 @@ rem ============================================================================
 exit /b
 
 :findWorkspaceSuccess
-    set "eDIR_WORKSPACE=%CD%"
+    endlocal & set "eDIR_WORKSPACE=%CD%"
     popd
-exit /b 
+exit /b 0
 
 :findWorkspaceFailed
     popd
@@ -149,7 +153,7 @@ exit /b
         @echo off & cls & @echo. & @echo.
         call :normalize eDIR_OWNER "%~dp0."
     )
-    call :findWorkspace
+    (call :findWorkspace) || (call :findWorkspace "C:\workspace")
     if errorlevel 1 (
         @echo [ERROR] 'WorkSpace' not found
         exit /b 1
