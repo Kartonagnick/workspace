@@ -2,13 +2,11 @@
 
 set "PATHS=C:\Program Files\7-Zip; C:\Program Files (x86)\7-Zip"
 
-set "EXCLUDE1=ipch; .vs; *VC.db; *.VC.opendb; *.sdf; .svn; .git" 
-set "EXCLUDE2=_backup; build; build-*; _build; _product*; product*" 
-set "EXCLUDE3=_stash; external; boost; googletest" 
-set "EXCLUDE=%EXCLUDE1%; %EXCLUDE2%; %EXCLUDE3%" 
+set "EXCLUDE=ipch; .vs; *VC.db; *.VC.opendb; *.sdf; .svn; .git" 
 
-rem              srcDirecotry    dstDirectory    excludeList    name
-call :backupData  "%~dp0"       "%~dp0_backup"   "%EXCLUDE%"     ""
+rem                     srcDirectory         dstDirectory    excludeList    name
+call :backupData  "%~dp0googletest-1.8.x"   "%~dp0_backup"   "%EXCLUDE%"     ""
+call :backupData  "%~dp0googletest-1.10.x"  "%~dp0_backup"   "%EXCLUDE%"     ""
 exit /b 
 
 rem =========================================================================
