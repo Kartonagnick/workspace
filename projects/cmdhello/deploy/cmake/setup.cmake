@@ -1,5 +1,6 @@
 
 # 2020y-08m-24d. WorkSpace project.
+# 2021y-01m-17d. WorkSpace project.
 ################################################################################
 include("${CMAKE_CURRENT_LIST_DIR}/001-symptoms.cmake")
 include("${CMAKE_CURRENT_LIST_DIR}/002-detect.cmake")
@@ -19,7 +20,7 @@ function(view_startup)
 
     message(STATUS "[gDIR_WORKSPACE] ........ ${gDIR_WORKSPACE}"     )
     message(STATUS "[gDIR_CMAKE_SCENARIO] ... ${gDIR_CMAKE_SCENARIO}")
-    message(STATUS "[gDIR_SOURCES] .......... ${gDIR_SOURCES}"       )
+    message(STATUS "[gDIR_SOURCE] ........... ${gDIR_SOURCE}"        )
     message(STATUS "[gNAME_PROJECT] ......... ${gNAME_PROJECT}"      )
 
 endfunction()
