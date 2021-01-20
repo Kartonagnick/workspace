@@ -1,8 +1,8 @@
 
-#include <iostream>
+#include <cstdio>
 
 void hello()
 {
-    std::cout << "hello!\n";
+    std::printf("hello!\n");
 }
 
