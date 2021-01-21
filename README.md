@@ -51,7 +51,7 @@ WorkSpace предлагает:
         "--configurations: all"
 ```
 
-
+[Как начать работать](docs/public/000-get_started.md)  
 
 [Документация](docs/home.md)  
 [История](docs/history.md)  
