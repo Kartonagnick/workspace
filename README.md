@@ -18,5 +18,40 @@ WorkSpace предлагает:
 - автоматизация рутины.  
 
 
+Пример использования
+--------------------
+
+1. Добавляете свой проект в любое удобное для вас место внутри workspace.  
+   Например: workspace/project/cmdhello.  
+
+2. Заходите во внутрь каталога своего проекта и запускаете движок:
+```
+    call "%eDIR_BAT_ENGINE%\run.bat" ^
+        "--build: cmake-makefiles"   ^
+        "--configurations: all"      ^
+        "--defines: STABLE_RELEASE"
+```
+
+Где, eDIR_BAT_ENGINE хранит путь к каталогу bat_engine.  
+В поставке с workspace есть [примеры](https://github.com/Kartonagnick/workspace/tree/master/projects/cmdhello/deploy) готовых батников.  
+
+Движок найдет все компиляторы, которые установлены на данной машине.  
+И для каждого компилятора запустит сборку всех конфигураций.  
+
+После этого можно запустить тесты:  
+```
+    call "%eDIR_BAT_ENGINE%\run.bat" ^
+        "--runTest: *.exe"
+```
+
+И инсталяцию:  
+```
+    call "%eDIR_BAT_ENGINE%\run.bat" ^
+        "--install: cmake-makefiles" ^
+        "--configurations: all"
+```
+
+
+
 [Документация](docs/home.md)  
 [История](docs/history.md)  
