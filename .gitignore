@@ -33,7 +33,9 @@
 
 # WorkSpace`s temporary directories
 _products
+_backup
 _build
+external
 
 # scripts
 scripts/bat
