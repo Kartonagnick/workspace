@@ -12,9 +12,9 @@ rem ============================================================================
 
     set "VC=msvc:64:all:dynamic"
     set "MG=mingw:64:all:static"
-    set "order=%VC%"
+    rem set "order=%VC%"
     rem set "order=%MG%"
-    rem set "order=%VC%; %MG%"
+    set "order=%VC%; %MG%"
     rem set "order=all"
 
     rem for development
