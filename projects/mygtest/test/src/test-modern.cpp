@@ -34,7 +34,6 @@ namespace
     void foo()
     {
         assert(false);
-
         std::cout << "INVALID\n";
         throw ::std::runtime_error("test");
     }
@@ -52,7 +51,7 @@ TEST(TEST_CASE_NAME, TEST_NUMBER(001))
     death_test(foo);
 }
 
-dREGISTER_UNIT_TEST(SampleTest_Method, tools\\ololo\\SampleTest, Method)
+dREGISTER_UNIT_TEST(SampleTest_Method, tools/ololo/SampleTest, Method)
 {
     dprint(std::cout << "ok\n");
 }

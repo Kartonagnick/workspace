@@ -24,7 +24,7 @@
           static_cast<const char*>(0),                    \
           static_cast<const char*>(0),                    \
           dGTEST_IN::CodeLocation(__FILE__, __LINE__),    \
-          (dGTEST_IN::GetTestTypeId),                     \
+         (dGTEST_IN::GetTestTypeId),                      \
           testing::Test::SetUpTestCase,                   \
           testing::Test::TearDownTestCase,                \
           new dGTEST_IN::TestFactoryImpl<Class>           \
@@ -46,7 +46,7 @@
 
     #if 0
     // example:
-    dREGISTER_UNIT_TEST(SampleTest_Method, tools\\ololo\\SampleTest, Method)
+    dREGISTER_UNIT_TEST(SampleTest_Method, tools/ololo/SampleTest, Method)
     {
         std::cout << "ok\n";
         auto lambda = []{ assert(false); };
