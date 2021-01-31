@@ -9,7 +9,16 @@ rem ============================================================================
 
     rem set "eDEBUG=ON"
     set "suffix=lib-{COMPILER_TAG}-{BUILD_TYPE}-{ADDRESS_MODEL}-{RUNTIME_CPP}"
-    set "order=all"
+
+    set "VC=msvc:64:all:dynamic"
+    set "MG=mingw:64:all:static"
+    set "order=%VC%"
+    rem set "order=%MG%"
+    rem set "order=%VC%; %MG%"
+    rem set "order=all"
+
+    rem for development
+    rem (call :generate) && (goto :success) || (goto :failed)
 
     (call :clean)    || (goto :failed)
     (call :build)    || (goto :failed)
@@ -25,32 +34,34 @@ exit /b 1
 
 rem ............................................................................
 
-:runTests
-    call "%eDIR_BAT_ENGINE%\run.bat" ^
-        "--runTests: *.exe"          ^
-        "--exclude: *mingw*-dynamic" ^
-        "--configurations: %order%"  ^
-        "--suffix: %suffix%"
-exit /b
-
-rem ............................................................................
-
 :clean
-    call "%eDIR_BAT_ENGINE%\run.bat" ^
+    call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--clean: all" 
 exit /b
 
-rem ............................................................................
-
-:build
-    call "%eDIR_BAT_ENGINE%\run.bat" ^
-        "--build: cmake-makefiles" ^
-        "--configurations: %order%"  ^
-        "--defines: STABLE_RELEASE"  ^
+:generate
+    call "%eDIR_BAT_ENGINE%\run.bat"  ^
+        "--generate: cmake-makefiles" ^
+        "--configurations: %order%"   ^
+        "--defines: UNSTABLE_RELEASE" ^
         "--suffix: %suffix%"
 exit /b
 
-rem ............................................................................
+:build
+    call "%eDIR_BAT_ENGINE%\run.bat"  ^
+        "--build: cmake-makefiles"    ^
+        "--configurations: %order%"   ^
+        "--defines: STABLE_RELEASE"   ^
+        "--suffix: %suffix%"
+exit /b
+
+:runTests
+    call "%eDIR_BAT_ENGINE%\run.bat"  ^
+        "--runTests: test*.exe"       ^
+        "--exclude: mingw*-dynamic"   ^
+        "--configurations: %order%"   ^
+        "--suffix: %suffix%"
+exit /b
 
 :install
     call "%eDIR_BAT_ENGINE%\run.bat" ^

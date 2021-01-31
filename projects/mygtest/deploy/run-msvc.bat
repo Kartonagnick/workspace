@@ -9,16 +9,20 @@ rem ============================================================================
     setlocal
 
     rem set "eDEBUG=ON"
+    set "suffix=lib-{COMPILER_TAG}-{BUILD_TYPE}-{ADDRESS_MODEL}-{RUNTIME_CPP}"
+
     set "order=msvc2019:64:release:static"
 
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--generate: cmake-makefiles" ^
         "--configurations: %order%"   ^
-        "--defines: UNSTABLE_RELEASE"
+        "--defines: UNSTABLE_RELEASE" ^
+        "--suffix: %suffix%"
 
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--runIDE: VisualStudio"      ^
-        "--configurations: %order%"
+        "--configurations: %order%"   ^
+        "--suffix: %suffix%"
 
 exit /b
 
