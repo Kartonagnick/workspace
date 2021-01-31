@@ -8,9 +8,12 @@ rem ============================================================================
 :main
     setlocal
     rem set "eDEBUG=ON"
+    set "suffix=lib-{COMPILER_TAG}-{BUILD_TYPE}-{ADDRESS_MODEL}-{RUNTIME_CPP}"
+
     call "%eDIR_BAT_ENGINE%\run.bat" ^
         "--runTests: *.exe"          ^
-        "--exclude: mingw*-dynamic"
+        "--exclude: mingw*-dynamic"  ^
+        "--suffix: %suffix%"
 exit /b
 
 rem ============================================================================

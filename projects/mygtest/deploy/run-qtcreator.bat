@@ -9,9 +9,11 @@ rem ============================================================================
     setlocal
 
     rem set "eDEBUG=ON"
+    set "suffix=lib-{COMPILER_TAG}-{BUILD_TYPE}-{ADDRESS_MODEL}-{RUNTIME_CPP}"
 
     call "%eDIR_BAT_ENGINE%\run.bat" ^
-        "--runIDE: QtCreator"
+        "--runIDE: QtCreator" ^
+        "--suffix: %suffix%"
 
 exit /b
 
