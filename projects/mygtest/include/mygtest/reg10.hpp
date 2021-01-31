@@ -44,7 +44,7 @@
 
     #if 0
     // example:
-    dREGISTER_UNIT_TEST(SampleTest_Method, tools\\ololo\\SampleTest, Method)
+    dREGISTER_UNIT_TEST(SampleTest_Method, tools/ololo/SampleTest, Method)
     {
         std::cout << "ok\n";
         auto lambda = []{ assert(false); };

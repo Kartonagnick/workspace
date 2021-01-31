@@ -28,7 +28,7 @@
 
 //==============================================================================
 //=== TEST_COMPONENT ===========================================================
-#include <mygtest/macro_overload_7.hpp>
+#include <mygtest/macro-overload-7.hpp>
 
 #define dUNIT_TEST_CLASS_0()                           unittest_
 #define dUNIT_TEST_CLASS_1(a1)                         unittest_##a1
@@ -41,12 +41,12 @@
 
 #define dUNIT_TEST_NAME_0() invalid_component_name
 #define dUNIT_TEST_NAME_1(a1) a1
-#define dUNIT_TEST_NAME_2(a1, a2) a1\\a2
-#define dUNIT_TEST_NAME_3(a1, a2, a3) a1\\a2\\a3
-#define dUNIT_TEST_NAME_4(a1, a2, a3, a4) a1\\a2\\a3\\a4
-#define dUNIT_TEST_NAME_5(a1, a2, a3, a4, a5) a1\\a2\\a3\\a4\\a5
-#define dUNIT_TEST_NAME_6(a1, a2, a3, a4, a5, a6) a1\\a2\\a3\\a4\\a5\\a6
-#define dUNIT_TEST_NAME_7(a1, a2, a3, a4, a5, a6, a7) a1\\a2\\a3\\a4\\a5\\a6\\a7
+#define dUNIT_TEST_NAME_2(a1, a2) a1/a2
+#define dUNIT_TEST_NAME_3(a1, a2, a3) a1/a2/a3
+#define dUNIT_TEST_NAME_4(a1, a2, a3, a4) a1/a2/a3/a4
+#define dUNIT_TEST_NAME_5(a1, a2, a3, a4, a5) a1/a2/a3/a4/a5
+#define dUNIT_TEST_NAME_6(a1, a2, a3, a4, a5, a6) a1/a2/a3/a4/a5/a6
+#define dUNIT_TEST_NAME_7(a1, a2, a3, a4, a5, a6, a7) a1/a2/a3/a4/a5/a6/a7
 
 #define dUNIT_TEST_CLASS(...) \
     dMACRO_CHOOSER_7(dUNIT_TEST_CLASS, __VA_ARGS__)(__VA_ARGS__)
