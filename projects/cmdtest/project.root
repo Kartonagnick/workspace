@@ -8,5 +8,6 @@ EXCLUDE_CONFIGURATIONS =
 # --- версия продукта
 #VERSION = 1.2.3   
 VERSION = include\cmdtest\confbuild.hpp
+VERSION = confbuild.hpp
 
 

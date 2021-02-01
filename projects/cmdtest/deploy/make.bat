@@ -14,6 +14,7 @@ rem ============================================================================
     (call :build)    || (goto :failed)
     (call :runTests) || (goto :failed)
     (call :install)  || (goto :failed)
+    (call :clean)    || (goto :failed)
 :success
     @echo [MAKE] completed successfully
 exit /b 0
