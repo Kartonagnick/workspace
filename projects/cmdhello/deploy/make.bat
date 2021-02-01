@@ -7,13 +7,15 @@ rem ============================================================================
     setlocal
 
     rem set "eDEBUG=ON"
-    set "IDE=msvc2019:64:debug:dynamic"
+    set "IDE=msvc2019:64:all:dynamic"
     set "order=%IDE%"
 
     rem call :runVersion
     rem call :runUpdate
     rem call :runInitial
     rem call :cleanBuild
+    rem call :cleanProduct
+    call :cleanAll
     rem call :generateCmakeMakeFiles
     rem call :buildCmakeMakeFiles
     call :installCmakeMakeFiles
@@ -47,8 +49,20 @@ exit /b
 rem ............................................................................
 
 :cleanBuild
-    call "%eDIR_BAT_ENGINE%\run.bat"  ^
-        "--clean: all" 
+    call "%eDIR_BAT_ENGINE%\run.bat" ^
+        "--clean: build"             ^
+        "--configurations: all" 
+exit /b
+
+:cleanProduct
+    call "%eDIR_BAT_ENGINE%\run.bat" ^
+        "--clean: product"           ^
+        "--configurations: all" 
+exit /b
+
+:cleanAll
+    call "%eDIR_BAT_ENGINE%\run.bat" ^
+        "--clean: all"
 exit /b
 
 rem ............................................................................
