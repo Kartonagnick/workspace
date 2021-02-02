@@ -7,7 +7,7 @@ rem ============================================================================
 
 :main
     setlocal
-    @echo [WORKSPACE] version 0.3.0
+    @echo [WORKSPACE] version 0.3.1
 
     call :initGit
     if errorlevel 1 (goto :failed)
