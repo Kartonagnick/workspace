@@ -32,14 +32,10 @@
     void Class::TestBody()
 
 #define dREGISTER_DISABLED_UNIT_TEST(Class, TestName, SubtestName) \
-    struct Class : public ::testing::Test             \
-    {                                                 \
-        Class() {}                                    \
-    private:                                          \
-        virtual void TestBody();                      \
-        static ::testing::TestInfo* const test_info_; \
-        dNOCOPYABLE(Class);                           \
-    };                                                \
+    struct Class         \
+    {                    \
+        void TestBody(); \
+    };                   \
     void Class::TestBody()
 
     #if 0

@@ -1,9 +1,9 @@
 ﻿
 # --- поддерживаемые конфигурации
-INCLUDE_CONFIGURATIONS = 
+INCLUDE_CONFIGURATIONS =
 
 # --- игнорируемые конфигурации
-EXCLUDE_CONFIGURATIONS = 
+EXCLUDE_CONFIGURATIONS =
 
 # --- версия продукта
 VERSION = confbuild.hpp

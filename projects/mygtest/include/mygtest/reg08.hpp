@@ -24,7 +24,7 @@
           static_cast<const char*>(0),                    \
           static_cast<const char*>(0),                    \
           dGTEST_IN::CodeLocation(__FILE__, __LINE__),    \
-         (dGTEST_IN::GetTestTypeId),                      \
+          dGTEST_IN::GetTestTypeId(),                     \
           testing::Test::SetUpTestCase,                   \
           testing::Test::TearDownTestCase,                \
           new dGTEST_IN::TestFactoryImpl<Class>           \
@@ -33,15 +33,10 @@
 
 
 #define dREGISTER_DISABLED_UNIT_TEST(Class, TestName, SubtestName) \
-    struct Class : public ::testing::Test             \
-    {                                                 \
-        Class() {}                                    \
-        void Public_(){}                              \
-    private:                                          \
-        virtual void TestBody();                      \
-        static ::testing::TestInfo* const test_info_; \
-        dNOCOPYABLE(Class);                           \
-    };                                                \
+    struct Class         \
+    {                    \
+        void TestBody(); \
+    };                   \
     void Class::TestBody()
 
     #if 0
