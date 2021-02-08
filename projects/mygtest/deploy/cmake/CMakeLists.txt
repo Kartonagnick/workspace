@@ -3,6 +3,7 @@
 # 2020y-08m-24d. WorkSpace project.
 # 2020y-12m-21d. WorkSpace project.
 # 2021y-01m-15d. WorkSpace project.
+# 2021y-02m-08d. WorkSpace project.
 ################################################################################
 ################################################################################
 
@@ -17,14 +18,18 @@ project(${gNAME_PROJECT} CXX)
 ################################################################################
 ################################################################################
 
+if(gSTABLE_RELEASE)
+    message(STATUS "gSTABLE_RELEASE: ON")
+else()
+    message(STATUS "gSTABLE_RELEASE: OFF")
+endif()
+
 make_target()
 
-if(NOT gSTABLE_RELEASE)
-    make_target(
-        PATH_TO_SOURCES "test"
-        DEPENDENCIES "mygtest"
-    )
-endif()
+make_target(
+    PATH_TO_SOURCES "test"
+    DEPENDENCIES "mygtest"
+)
 
 ################################################################################
 ################################################################################

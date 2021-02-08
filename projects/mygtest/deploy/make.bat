@@ -14,13 +14,13 @@ rem ============================================================================
     set "MG=mingw:64:all:static"
     rem set "order=%VC%"
     rem set "order=%MG%"
-    set "order=%VC%; %MG%"
-    rem set "order=all"
+    rem set "order=%VC%; %MG%"
+    set "order=all"
 
     rem for development
     rem (call :generate) && (goto :success) || (goto :failed)
 
-    (call :clean)    || (goto :failed)
+    rem (call :clean)    || (goto :failed)
     (call :build)    || (goto :failed)
     (call :runTests) || (goto :failed)
     (call :install)  || (goto :failed)
@@ -58,7 +58,7 @@ exit /b
 :runTests
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--runTests: test*.exe"       ^
-        "--exclude: mingw*-dynamic"   ^
+        "--exclude: *-mingw*-dynamic" ^
         "--configurations: %order%"   ^
         "--suffix: %suffix%"
 exit /b

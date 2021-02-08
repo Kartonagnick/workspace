@@ -44,7 +44,7 @@
 #if defined(dHAS_NOEXCEPT)
     #define dNOEXCEPT noexcept
 #else
-    #define dNOEXCEPT
+    #define dNOEXCEPT throw()
 #endif
 
 //==============================================================================
