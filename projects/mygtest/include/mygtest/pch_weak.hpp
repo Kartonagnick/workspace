@@ -1,9 +1,10 @@
 ﻿
-#pragma once
+// [2020y-12m-05d] Idrisov Denis R.
+// [2021y-01m-20d] Idrisov Denis R.
 
-#ifndef WIN32_LEAN_AND_MEAN
-    #define WIN32_LEAN_AND_MEAN
-#endif
+#pragma once
+#ifndef dMYGTEST_PCH_WEAK_USED_ 
+#define dMYGTEST_PCH_WEAK_USED_ 102
 
 //================================================================================
 //===[mygtest]====================================================================
@@ -11,11 +12,6 @@
 #include <cassert>
 #include <cstring>
 
-//#if defined(_DEBUG) && defined(_WIN32)
-//    #include <crtdbg.h>
-//#endif
-
 //================================================================================
 //================================================================================
-
-
+#endif // !dMYGTEST_PCH_WEAK_USED_

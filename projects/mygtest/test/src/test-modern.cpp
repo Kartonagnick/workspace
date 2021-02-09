@@ -34,7 +34,7 @@ namespace
     void foo()
     {
         assert(false);
-        std::cout << "INVALID\n";
+        dprint(std::cerr << "INVALID\n");
         throw ::std::runtime_error("test");
     }
   

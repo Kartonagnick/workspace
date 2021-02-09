@@ -10,8 +10,8 @@ rem ============================================================================
     rem set "eDEBUG=ON"
     set "suffix=lib-{COMPILER_TAG}-{BUILD_TYPE}-{ADDRESS_MODEL}-{RUNTIME_CPP}"
 
-    set "VC=msvc:64:all:dynamic"
-    set "MG=mingw:64:all:static"
+    rem set "VC=msvc:64:all:static"
+    rem set "MG=mingw:64:all:static"
     rem set "order=%VC%"
     rem set "order=%MG%"
     rem set "order=%VC%; %MG%"
@@ -20,7 +20,7 @@ rem ============================================================================
     rem for development
     rem (call :generate) && (goto :success) || (goto :failed)
 
-    rem (call :clean)    || (goto :failed)
+    (call :clean)    || (goto :failed)
     (call :build)    || (goto :failed)
     (call :runTests) || (goto :failed)
     (call :install)  || (goto :failed)
@@ -43,7 +43,7 @@ exit /b
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--generate: cmake-makefiles" ^
         "--configurations: %order%"   ^
-        "--defines: UNSTABLE_RELEASE" ^
+        "--defines: STABLE_RELEASE"   ^
         "--suffix: %suffix%"
 exit /b
 

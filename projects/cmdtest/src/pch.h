@@ -1,14 +1,9 @@
 
 #pragma once
 
-#ifdef _MSC_VER
-    #ifdef STABLE_RELEASE
-        #pragma message("Build stable release version")
-    #else
-        #pragma message("Build development version")
-    #endif
-#endif
-
+#define dBUILD_TARGET cmdtest
+#include <cmdtest/confbuild.hpp>
+#include "confinfo.hpp"
 #include <iostream>
 
 
