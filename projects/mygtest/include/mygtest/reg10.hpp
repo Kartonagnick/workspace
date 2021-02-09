@@ -4,7 +4,7 @@
 
 #pragma once
 #ifndef dMYGTEST_REG10_USED_ 
-#define dMYGTEST_REG10_USED_
+#define dMYGTEST_REG10_USED_ 102
 
 //==============================================================================
 //=== dREGISTER_UNIT_TEST ======================================================

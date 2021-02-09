@@ -4,11 +4,7 @@
 
 #pragma once
 #ifndef dMYGTEST_PCH_WEAK_USED_ 
-#define dMYGTEST_PCH_WEAK_USED_
-
-#ifndef WIN32_LEAN_AND_MEAN
-    #define WIN32_LEAN_AND_MEAN
-#endif
+#define dMYGTEST_PCH_WEAK_USED_ 102
 
 //================================================================================
 //===[mygtest]====================================================================

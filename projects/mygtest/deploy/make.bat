@@ -20,7 +20,7 @@ rem ============================================================================
     rem for development
     rem (call :generate) && (goto :success) || (goto :failed)
 
-    rem (call :clean)    || (goto :failed)
+    (call :clean)    || (goto :failed)
     (call :build)    || (goto :failed)
     (call :runTests) || (goto :failed)
     (call :install)  || (goto :failed)

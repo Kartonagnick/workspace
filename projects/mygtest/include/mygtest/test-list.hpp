@@ -4,7 +4,7 @@
 
 #pragma once
 #ifndef dMYGTEST_TEST_LIST_USED_ 
-#define dMYGTEST_TEST_LIST_USED_
+#define dMYGTEST_TEST_LIST_USED_ 102
 //==============================================================================
 //==============================================================================
 

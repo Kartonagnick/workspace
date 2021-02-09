@@ -4,7 +4,7 @@
 
 #pragma once
 #ifndef dMYGTEST_EXTENSION_USED_ 
-#define dMYGTEST_EXTENSION_USED_  102
+#define dMYGTEST_EXTENSION_USED_ 102
 
 #include <mygtest/features.hpp>
 

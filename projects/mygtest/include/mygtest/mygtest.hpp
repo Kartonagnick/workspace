@@ -6,7 +6,7 @@
 
 #pragma once
 #ifndef dMYGTEST_USED_ 
-#define dMYGTEST_USED_
+#define dMYGTEST_USED_ 102
 
 #if defined(__GNUC__)
     #pragma GCC system_header
