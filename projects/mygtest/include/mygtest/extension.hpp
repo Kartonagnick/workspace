@@ -1,7 +1,10 @@
 
+// [2020y-12m-05d] Idrisov Denis R.
+// [2021y-01m-20d] Idrisov Denis R.
+
 #pragma once
 #ifndef dMYGTEST_EXTENSION_USED_ 
-#define dMYGTEST_EXTENSION_USED_
+#define dMYGTEST_EXTENSION_USED_  102
 
 #include <mygtest/features.hpp>
 
@@ -21,8 +24,10 @@
 //=== dREGISTER_UNIT_TEST ======================================================
 
 #ifdef GTEST_MAYBE_5046_
+    dMESSAGE("mygtest: used 'google test 1.0.x'")
     #include <mygtest/reg10.hpp>
 #else
+    dMESSAGE("mygtest: used 'google test 0.8.x'")
     #include <mygtest/reg08.hpp>
 #endif
 

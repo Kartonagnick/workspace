@@ -1,13 +1,14 @@
 
+// [2020y-12m-05d] Idrisov Denis R.
+// [2021y-01m-20d] Idrisov Denis R.
+
 #pragma once
-#ifndef dGCOMPONENT_USED_
-#define dGCOMPONENT_USED_ 1
+#ifndef dMYGTEST_COMPONENT_USED_
+#define dMYGTEST_COMPONENT_USED_ 102
 
 #if defined(__GNUC__)
     #pragma GCC system_header
 #endif
-
-// #include <mygtest/features.hpp>
 
 #undef  TEST_COMPONENT
 #undef _TEST_COMPONENT
@@ -16,7 +17,7 @@
 //=== diagnostic`s messages ====================================================
 
 #ifdef STABLE_RELEASE
-    #define dDISABLE_DPRINT
+    #define dDISABLE_DPRINT 1
 #endif
 
 #ifdef dDISABLE_DPRINT
@@ -32,15 +33,6 @@
 
 //==============================================================================
 //==============================================================================
-
-namespace testing
-{
-	/*
-    template<class t>
-    dCONSTEXPR_CPP11 void unused(t&&) dNOEXCEPT {}
-	*/
-
-} // namespace testing
 
 #ifdef NDEBUG
     // release
@@ -69,8 +61,6 @@ namespace testing
 #define _TEST(a, b)         \
     struct dCLASSNAME(a, b) \
     {                       \
-        void Public_(){}    \
-    private:                \
         void TestBody();    \
     };                      \
     void dCLASSNAME(a, b)::TestBody()
@@ -104,5 +94,4 @@ namespace testing
 
 //==============================================================================
 //==============================================================================
-
-#endif // !dGCOMPONENT_USED_
+#endif // !dMYGTEST_COMPONENT_USED_

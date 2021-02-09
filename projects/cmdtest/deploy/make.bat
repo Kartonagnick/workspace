@@ -7,7 +7,7 @@ rem ============================================================================
     setlocal
     @echo [MAKE] run...
 
-    rem set "eDEBUG=ON"
+    set "eDEBUG=ON"
     set "order=all"
 
     (call :clean)    || (goto :failed)

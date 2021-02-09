@@ -8,9 +8,12 @@
 //+                                   CastleOfDreams@yandex.ru +
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// [2020y-12m-05d] Idrisov Denis R.
+// [2021y-01m-20d] Idrisov Denis R.
+
 #pragma once
 #ifndef dTOOLS_MACRO_OVERLOAD_7_USED_
-#define dTOOLS_MACRO_OVERLOAD_7_USED_ 1
+#define dTOOLS_MACRO_OVERLOAD_7_USED_ 100
 
 //==============================================================================
 

@@ -1,7 +1,19 @@
 
+// [2020y-12m-05d] Idrisov Denis R.
+// [2021y-01m-20d] Idrisov Denis R.
+
 #pragma once
 #ifndef dMYGTEST_FEATURES_USED_
-#define dMYGTEST_FEATURES_USED_ 1
+#define dMYGTEST_FEATURES_USED_ 102
+
+//==============================================================================
+//=== dMESSAGE =================================================================
+
+#ifdef _MSC_VER
+    #define dMESSAGE(...)  __pragma(message(__VA_ARGS__))
+#else
+    #define dMESSAGE(...) 
+#endif
 
 //==============================================================================
 //=== dHAS_DELETING_FUNCTIONS ==================================================
@@ -38,10 +50,11 @@
 #endif
 
 #if defined(_MSC_FULL_VER) && _MSC_FULL_VER >= 190023026
+    // #pragma message("build for msvc2015 (or newer)")
     #define dHAS_NOEXCEPT 1
 #endif
                 
-#if defined(dHAS_NOEXCEPT)
+#ifdef dHAS_NOEXCEPT
     #define dNOEXCEPT noexcept
 #else
     #define dNOEXCEPT throw()
@@ -54,7 +67,7 @@
     // #pragma message("build for msvc2015 (or newer) or other compiler")
     // #pragma message("build for c++11 (or newer)")
     #define dCONSTEXPR_CPP11 constexpr
-    #define dHAS_CONSTEXPR_CPP11
+    #define dHAS_CONSTEXPR_CPP11 1
 #else
     #define dCONSTEXPR_CPP11 inline
 #endif
@@ -66,7 +79,7 @@
     // #pragma message("build for msvc2017 (or newer) or other compiler")
     // #pragma message("build for c++14 (or newer)")
     #define dCONSTEXPR_CPP14 constexpr
-    #define dHAS_CONSTEXPR_CPP14
+    #define dHAS_CONSTEXPR_CPP14 1
 #else
     #define dCONSTEXPR_CPP14 inline
 #endif
@@ -76,7 +89,7 @@
 
 #if (defined(_MSVC_LANG) && _MSVC_LANG >= 201703L) || __cplusplus >= 201703L
     // #pragma message("build for c++17 (or newer))
-    #define dCPP17
+    #define dHAS_CPP17 1
     #define dNODISCARD [[nodiscard]]
 #else
     #define dNODISCARD

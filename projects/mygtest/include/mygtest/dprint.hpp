@@ -1,7 +1,10 @@
 
+// [2020y-12m-05d] Idrisov Denis R.
+// [2021y-01m-20d] Idrisov Denis R.
+
 #pragma once
-#ifndef dPRINT_USED_
-#define dPRINT_USED_ 1
+#ifndef dMYGTEST_PRINT_USED_
+#define dMYGTEST_PRINT_USED_ 102
 
 #if defined(_MSC_VER) && _MSC_VER < 1700
     // mutex is available for studio 2012 or newer
@@ -34,4 +37,4 @@ struct glob_dprint_mutex_
 
 //==============================================================================
 //==============================================================================
-#endif // !dPRINT_USED_
+#endif // !dMYGTEST_PRINT_USED_

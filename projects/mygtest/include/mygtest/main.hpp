@@ -1,7 +1,10 @@
 
+// [2020y-12m-05d] Idrisov Denis R.
+// [2021y-01m-20d] Idrisov Denis R.
+
 #pragma once
-#ifndef dGMAIN_USED_
-#define dGMAIN_USED_
+#ifndef dMYGTEST_MAIN_USED_
+#define dMYGTEST_MAIN_USED_ 102
 
 // do not include the header in pch.hpp
 
@@ -70,4 +73,4 @@ namespace testing
 
 //==============================================================================
 //==============================================================================
-#endif // !dGMAIN_USED_
+#endif // !dMYGTEST_MAIN_USED_

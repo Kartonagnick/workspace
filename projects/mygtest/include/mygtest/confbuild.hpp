@@ -1,7 +1,10 @@
 
+// [2020y-12m-05d] Idrisov Denis R.
+// [2021y-01m-20d] Idrisov Denis R.
+
 #pragma once
 #ifndef dMYGTEST_CONFBUILD_USED_
-#define dMYGTEST_CONFBUILD_USED_ 1
+#define dMYGTEST_CONFBUILD_USED_ 102
 //================================================================================
 //================================================================================
 
@@ -41,7 +44,7 @@
 
 #define dVERSION_MAJOR      2
 #define dVERSION_MINOR      0
-#define dVERSION_PATCH      1
+#define dVERSION_PATCH      2
 
 #define dSTRINGIZE(...) #__VA_ARGS__
 #define dSSTRINGIZE(x) dSTRINGIZE(x)

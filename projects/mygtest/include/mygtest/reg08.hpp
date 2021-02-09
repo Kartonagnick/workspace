@@ -1,4 +1,7 @@
 
+// [2020y-12m-05d] Idrisov Denis R.
+// [2021y-01m-20d] Idrisov Denis R.
+
 #pragma once
 #ifndef dMYGTEST_REG8_USED_ 
 #define dMYGTEST_REG8_USED_
