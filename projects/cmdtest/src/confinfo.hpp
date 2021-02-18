@@ -2,8 +2,8 @@
 // [2021-02-09] Idrisov Denis R.
 
 #pragma once
-#ifndef dMYGTEST_BUILD_INFO_USED_
-#define dMYGTEST_BUILD_INFO_USED_ 102
+#ifndef dCMDTEST_BUILD_INFO_USED_
+#define dCMDTEST_BUILD_INFO_USED_ 100
 //================================================================================
 //================================================================================
 
@@ -41,4 +41,4 @@
 
 //================================================================================
 //================================================================================
-#endif // !dMYGTEST_BUILD_INFO_USED_
+#endif // !dCMDTEST_BUILD_INFO_USED_

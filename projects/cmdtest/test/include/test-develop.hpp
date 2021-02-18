@@ -1,11 +1,7 @@
 
 #pragma once
-#ifndef dTEST_LIST_DEV_USED_ 
-#define dTEST_LIST_DEV_USED_ 1
-
-#ifdef STABLE_RELEASE
-    #error STABLE_RELEASE require #include <test_list_stable.hpp>
-#endif
+#ifndef dTEST_LIST_DEVELOP_USED_ 
+#define dTEST_LIST_DEVELOP_USED_ 100
 
     #define CODE_GENERATION_ON
     #define INCLUDE_AUTO_GENERATED
@@ -15,10 +11,10 @@
     #define INCLUDE_LONG_TESTS
 
 //==============================================================================
-//===== fsystem ============================================||==================
+//===== modern/classic =====================================||==================
     #define TEST_MODERN                                     // ready!
     #define TEST_CLASSIC                                    // ready!
 //==========================================================||==================
 //==============================================================================
 
-#endif // !dTEST_LIST_DEV_USED_
+#endif // !dTEST_LIST_DEVELOP_USED_

@@ -2,11 +2,7 @@
 #pragma once
 
 #ifndef dTEST_LIST_STABLE_USED_ 
-#define dTEST_LIST_STABLE_USED_ 1
-
-#ifndef STABLE_RELEASE
-    #error #include <test_list_stable.hpp> require #define STABLE_RELEASE
-#endif
+#define dTEST_LIST_STABLE_USED_ 100
 
     #define dFORBID_ZERO_SIZE_ARRAY
     #define INCLUDE_AUTO_GENERATED
@@ -16,7 +12,7 @@
     #define INCLUDE_LONG_TESTS
 
 //==============================================================================
-//===== fsystem ============================================||==================
+//===== modern/classic =====================================||==================
     #define TEST_MODERN                                     // ready!
     #define TEST_CLASSIC                                    // ready!
 //==========================================================||==================
