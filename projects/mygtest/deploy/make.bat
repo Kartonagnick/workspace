@@ -51,7 +51,7 @@ exit /b
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--build: cmake-makefiles"    ^
         "--configurations: %order%"   ^
-        "--defines: UNSTABLE_RELEASE" ^
+        "--defines: STABLE_RELEASE"   ^
         "--suffix: %suffix%"
 exit /b
 

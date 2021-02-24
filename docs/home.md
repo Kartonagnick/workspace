@@ -1,5 +1,4 @@
-
-[![logo](workspace25.png)](home.md "home") 
+[![logo](logo.png)](../README.md "for users")  
 
 Workspace представляет собой среду для разработки.  
 Основная задача: упростить и облегчить сборку продуктов.  

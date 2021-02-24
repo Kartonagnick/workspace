@@ -1,4 +1,4 @@
-[![logo](docs/workspace25.png)](docs/home.md "home") 
+[![logo](docs/logo.png)](docs/home.md "for developers")  
 
 Данный репозиторий представляет собой готовую среду для разработки.  
 Основная задача: упростить и облегчить сборку продуктов.  
