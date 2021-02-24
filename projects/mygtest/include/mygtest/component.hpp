@@ -23,12 +23,9 @@
 #ifdef dDISABLE_DPRINT
     #define dprint(message) \
         void()
-#elif !defined(_MSC_VER) || _MSC_VER >= 1700
-    // #pragma message("build for msvc2012 (or newer) or other compiler")
-    #include <mygtest/dprint.hpp>
 #else
-    #define dprint(message) \
-        void()
+    #include <mygtest/dprint.hpp>
+
 #endif // dDISABLE_DPRINT
 
 //==============================================================================

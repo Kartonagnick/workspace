@@ -12,11 +12,12 @@ rem ============================================================================
     set "suffix=lib-{COMPILER_TAG}-{BUILD_TYPE}-{ADDRESS_MODEL}-{RUNTIME_CPP}"
 
     set "order=msvc2019:64:release:static"
+    set "order=msvc2008:64:release:static"
 
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--generate: cmake-makefiles" ^
         "--configurations: %order%"   ^
-        "--defines: STABLE_RELEASE"   ^
+        "--defines: UNSTABLE_RELEASE"   ^
         "--suffix: %suffix%"
 
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
