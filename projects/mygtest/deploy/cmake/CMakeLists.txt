@@ -25,11 +25,7 @@ else()
 endif()
 
 make_target()
-
-make_target(
-    PATH_TO_SOURCES "test"
-    DEPENDENCIES "mygtest"
-)
+make_target(PATH_TO_SOURCES "test")
 
 ################################################################################
 ################################################################################

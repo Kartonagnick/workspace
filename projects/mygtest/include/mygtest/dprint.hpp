@@ -6,15 +6,13 @@
 #ifndef dMYGTEST_PRINT_USED_
 #define dMYGTEST_PRINT_USED_ 102
 
-#if defined(_MSC_VER) && _MSC_VER < 1700
-    // mutex is available for studio 2012 or newer
-    #error need msvc2012 (or newer)
-#endif
-
 //==============================================================================
 //=== [dprint] =================================================================
 
 #include <iostream>
+
+#ifdef dHAS_ATOMIC
+
 #include <mutex>
 
 #define dprint(out_message_operation)         \
@@ -34,6 +32,30 @@ struct glob_dprint_mutex_
         return mut;
     }
 };
+
+#else
+
+#include <mygtest/synch.hpp>
+
+#define dprint(out_message_operation) \
+{                                     \
+    ::mygtest::synch& gp_mutex        \
+        = glob_dprint_mutex_::get();  \
+    ::mygtest::synch_guard            \
+        dprint_lock(gp_mutex);        \
+    out_message_operation;            \
+} void()
+
+struct glob_dprint_mutex_
+{
+    static ::mygtest::synch& get()
+    {
+        static ::mygtest::synch mut;
+        return mut;
+    }
+};
+
+#endif // !dHAS_ATOMIC
 
 //==============================================================================
 //==============================================================================

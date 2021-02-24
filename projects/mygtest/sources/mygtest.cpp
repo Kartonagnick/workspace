@@ -19,10 +19,10 @@
     #define dHAS_NOEXCEPT 1
 #endif
                 
-#if defined(dHAS_NOEXCEPT)
+#ifdef dHAS_NOEXCEPT
     #define dNOEXCEPT noexcept
 #else
-    #define dNOEXCEPT
+    #define dNOEXCEPT throw()
 #endif
 
 //==============================================================================
