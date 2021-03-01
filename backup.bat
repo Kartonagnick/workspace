@@ -3,7 +3,7 @@
 set "PATHS=C:\Program Files\7-Zip; C:\Program Files (x86)\7-Zip"
 
 set "EXCLUDE1=ipch; .vs; *VC.db; *.VC.opendb; *.sdf; .svn; .git" 
-set "EXCLUDE2=_backup; _build; _products; _stash" 
+set "EXCLUDE2=_backup; _build; _products; _cache; _stash" 
 set "EXCLUDE3=external; boost; googletest" 
 set "EXCLUDE=%EXCLUDE1%; %EXCLUDE2%; %EXCLUDE3%" 
 
