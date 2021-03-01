@@ -3,8 +3,8 @@
 set "PATHS=C:\Program Files\7-Zip; C:\Program Files (x86)\7-Zip"
 
 set "EXCLUDE1=ipch; .vs; *VC.db; *.VC.opendb; *.sdf; .svn; .git" 
-set "EXCLUDE2=_backup; build; build-*; _build; _product*; product*" 
-set "EXCLUDE3=_stash; external; boost; googletest" 
+set "EXCLUDE2=_backup; _build; _products; _stash" 
+set "EXCLUDE3=external; boost; googletest" 
 set "EXCLUDE=%EXCLUDE1%; %EXCLUDE2%; %EXCLUDE3%" 
 
 rem              srcDirecotry    dstDirectory    excludeList    name
