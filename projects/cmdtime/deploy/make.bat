@@ -5,106 +5,49 @@ rem ============================================================================
 rem ============================================================================
 :main
     setlocal
+    @echo [MAKE] run...
 
-    rem set "eDEBUG=ON"
-    set "IDE=msvc2019:64:all:dynamic"
-    set "order=%IDE%"
+    set "eDEBUG=ON"
+    set "order=all"
 
-    rem (call :runVersion)    || (goto :failed)
-    rem (call :runUpdate)     || (goto :failed)
-    rem (call :runInitial)    || (goto :failed)
-    rem (call :cleanBuild)    || (goto :failed)
-    rem (call :cleanProduct)  || (goto :failed)
-    rem (call :cleanAll)      || (goto :failed)
+    (call :clean)    || (goto :failed)
+    (call :build)    || (goto :failed)
+    (call :runTests) || (goto :failed)
+    (call :install)  || (goto :failed)
+    (call :clean)    || (goto :failed)
+:success
+    @echo [MAKE] completed successfully
+exit /b 0
 
-    (call :generateCmakeMakeFiles)  || (goto :failed)
-    (call :buildCmakeMakeFiles)     || (goto :failed)
-    (call :installCmakeMakeFiles)   || (goto :failed)
-    (call :runTests)                || (goto :failed)
-
-    rem call :runVisualStudio
-    rem call :runQtCreator
-exit /b
+:failed
+    @echo [MAKE] finished with erros
+exit /b 1
 
 rem ............................................................................
 
-:runVersion
-    call "%eDIR_BAT_ENGINE%\run.bat" --version
+:clean
+    call "%eDIR_BAT_ENGINE%\run.bat" ^
+        "--clean: all" 
 exit /b
 
-:runUpdate
-    call "%eDIR_BAT_ENGINE%\run.bat" --update
-exit /b
-
-:runInitial
-    call "%eDIR_BAT_ENGINE%\run.bat" --initial
+:build
+    call "%eDIR_BAT_ENGINE%\run.bat" ^
+        "--build: cmake-makefiles"   ^
+        "--configurations: %order%"  ^
+        "--defines: STABLE_RELEASE"
 exit /b
 
 :runTests
     call "%eDIR_BAT_ENGINE%\run.bat" ^
-        "--runTests: *.exe"          ^
+        "--runTests: test*.exe"      ^
         "--exclude: mingw*-dynamic"  ^
         "--configurations: %order%"
 exit /b
 
-rem ............................................................................
-
-:cleanBuild
+:install
     call "%eDIR_BAT_ENGINE%\run.bat" ^
-        "--clean: build"             ^
-        "--configurations: all" 
-exit /b
-
-:cleanProduct
-    call "%eDIR_BAT_ENGINE%\run.bat" ^
-        "--clean: product"           ^
-        "--configurations: all" 
-exit /b
-
-:cleanAll
-    call "%eDIR_BAT_ENGINE%\run.bat" ^
-        "--clean: all"
-exit /b
-
-rem ............................................................................
-
-:runQtCreator
-    call "%eDIR_BAT_ENGINE%\run.bat"  ^
-        "--runIDE: QtCreator"
-exit /b
-
-rem ............................................................................
-
-:runVisualStudio
-    call "%eDIR_BAT_ENGINE%\run.bat"  ^
-        "--runIDE: VisualStudio"      ^
-        "--configurations: %IDE%"
-exit /b
-
-rem ............................................................................
-
-:generateCmakeMakeFiles
-    call "%eDIR_BAT_ENGINE%\run.bat"  ^
-        "--generate: cmake-makefiles" ^
-        "--configurations: %order%"   ^
-        "--defines: UNSTABLE_RELEASE"
-exit /b
-
-rem ............................................................................
-
-:buildCmakeMakeFiles
-    call "%eDIR_BAT_ENGINE%\run.bat"  ^
-        "--build: cmake-makefiles"    ^
+        "--custom: finalize"         ^
         "--configurations: %order%"
-exit /b
-
-rem ............................................................................
-
-:installCmakeMakeFiles
-    call "%eDIR_BAT_ENGINE%\run.bat"  ^
-        "--install: cmake-makefiles"  ^
-        "--configurations: %order%"   ^
-        "--defines: STABLE_RELEASE"
 exit /b
 
 rem ============================================================================
