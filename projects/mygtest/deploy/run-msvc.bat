@@ -7,25 +7,37 @@ rem ============================================================================
 
 :main
     setlocal
+    @echo [RUN] Visual Studio...
 
     rem set "eDEBUG=ON"
-    set "suffix=lib-{COMPILER_TAG}-{BUILD_TYPE}-{ADDRESS_MODEL}-{RUNTIME_CPP}"
-
-    set "order=msvc2019:64:release:static"
-    set "order=msvc2008:64:release:static"
+    set "order=msvc2008:64:debug:static"
+    set "order=msvc2010:64:debug:static"
+    set "order=msvc2012:64:debug:static"
+    set "order=msvc2013:64:debug:static"
+    set "order=msvc2015:64:debug:static"
+    set "order=msvc2017:64:debug:static"
+    set "order=msvc2019:64:debug:static"
 
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--generate: cmake-makefiles" ^
         "--configurations: %order%"   ^
-        "--defines: UNSTABLE_RELEASE"   ^
-        "--suffix: %suffix%"
+        "--defines: UNSTABLE_RELEASE"
+ 
+    if errorlevel 1 (goto :failed)
 
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--runIDE: VisualStudio"      ^
-        "--configurations: %order%"   ^
-        "--suffix: %suffix%"
+        "--configurations: %order%"
 
-exit /b
+    if errorlevel 1 (goto :failed)
+
+:success
+    @echo [RUN] completed successfully
+exit /b 0
+
+:failed
+    @echo [RUN] finished with erros
+exit /b 1
 
 rem ============================================================================
 rem ============================================================================

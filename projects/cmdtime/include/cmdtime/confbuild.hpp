@@ -1,9 +1,8 @@
-// [2020y-12m-05d] Idrisov Denis R.
-// [2021y-01m-20d] Idrisov Denis R.
-// [2021y-02m-10d][00:36:45] Idrisov Denis R. 100
+
+// 02:34:32
 #pragma once
-#ifndef dMYGTEST_CONFBUILD_USED_
-#define dMYGTEST_CONFBUILD_USED_ 102
+#ifndef dCMDTEST_CONFBUILD_USED_
+#define dCMDTEST_CONFBUILD_USED_ 100
 //================================================================================
 //================================================================================
 
@@ -24,9 +23,9 @@
 #endif
 
 #if defined(dX64)
-    #define dTXT_ADDRESS_MODEL "x64"
+    #define dTXT_ADDRESS_MODEL "64-bit"
 #elif defined(dX32)
-    #define dTXT_ADDRESS_MODEL "x86"
+    #define dTXT_ADDRESS_MODEL "32-bit"
 #endif
 
 #ifdef NDEBUG
@@ -41,9 +40,9 @@
     #define dTXT_RELEASE_STABLE "unstable"
 #endif
 
-#define dVERSION_MAJOR      2
+#define dVERSION_MAJOR      1
 #define dVERSION_MINOR      0
-#define dVERSION_PATCH      2
+#define dVERSION_PATCH      0
 
 #define dSTRINGIZE(...) #__VA_ARGS__
 #define dSSTRINGIZE(x) dSTRINGIZE(x)
@@ -59,4 +58,4 @@
 
 //================================================================================
 //================================================================================
-#endif // !dMYGTEST_CONFBUILD_USED_
+#endif // !CMDTEST_CONFBUILD_USED_

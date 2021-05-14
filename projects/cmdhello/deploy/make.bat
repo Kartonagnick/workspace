@@ -10,16 +10,17 @@ rem ============================================================================
     set "IDE=msvc2019:64:all:dynamic"
     set "order=%IDE%"
 
-    rem call :runVersion
-    rem call :runUpdate
-    rem call :runInitial
-    rem call :cleanBuild
-    rem call :cleanProduct
-    call :cleanAll
-    rem call :generateCmakeMakeFiles
-    rem call :buildCmakeMakeFiles
-    call :installCmakeMakeFiles
-    call :runTests
+    rem (call :runVersion)    || (goto :failed)
+    rem (call :runUpdate)     || (goto :failed)
+    rem (call :runInitial)    || (goto :failed)
+    rem (call :cleanBuild)    || (goto :failed)
+    rem (call :cleanProduct)  || (goto :failed)
+    rem (call :cleanAll)      || (goto :failed)
+
+    (call :generateCmakeMakeFiles)  || (goto :failed)
+    (call :buildCmakeMakeFiles)     || (goto :failed)
+    (call :installCmakeMakeFiles)   || (goto :failed)
+    (call :runTests)                || (goto :failed)
 
     rem call :runVisualStudio
     rem call :runQtCreator

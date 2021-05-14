@@ -1,89 +1,20 @@
-@echo off 
+@echo off
 call :checkParent
 if errorlevel 1 (exit /b 1)
+
 rem ============================================================================
 rem ============================================================================
+
 :main
     setlocal
-    @echo [MAKE] run...
 
     rem set "eDEBUG=ON"
 
-    set "VC08=msvc2008:64:debug:static"
-    set "VC10=msvc2010:64:release:static"
-    set "VC12=msvc2012:32:debug:static"
-    set "VC13=msvc2013:64:release:static"
-    set "VC15=msvc2015:32:debug:static"
-    set "VC17=msvc2017:64:release:static"
-    set "VC19=msvc2019:64:debug:static"
-    set "VC=%VC08%;%VC10%;%VC12%;%VC13%;%VC15%;%VC17%;%VC19%"
-
-    set "MG81=mingw810:64:release:static"
-    set "MG73=mingw730:64:release:static"
-    set "MG72=mingw720:64:release:static"
-    set "MG=%MG72%;%MG73%;%MG81%;"
-
-    set "order=%VC19%"
-    rem set "order=%MG%"
-    set "order=%VC%; %MG%"
-    ::set "order=all"
-
-    rem for development
-    rem (call :generate) && (goto :success) || (goto :failed)
-
-    rem (call :clean)    || (goto :failed)
-    (call :build)    || (goto :failed)
-    (call :runTests) || (goto :failed)
-    rem (call :runStress) || (goto :failed)
-    (call :install)  || (goto :failed)
-:success
-    @echo [MAKE] completed successfully
-exit /b 0
-
-:failed
-    @echo [MAKE] finished with erros
-exit /b 1
-
-rem ............................................................................
-
-:clean
-    call "%eDIR_BAT_ENGINE%\run.bat"  ^
-        "--clean: all" 
-exit /b
-
-:generate
-    call "%eDIR_BAT_ENGINE%\run.bat"  ^
-        "--generate: cmake-makefiles" ^
-        "--configurations: %order%"   ^
-        "--defines: UNSTABLE_RELEASE"
-exit /b
-
-:build
-    call "%eDIR_BAT_ENGINE%\run.bat"  ^
-        "--build: cmake-makefiles"    ^
-        "--configurations: %order%"   ^
-        "--defines: STABLE_RELEASE"
-exit /b
-
-:runTests
-    call "%eDIR_BAT_ENGINE%\run.bat"  ^
-        "--runTests: test*.exe"       ^
-        "--exclude: mingw*-dynamic"   ^
-        "--configurations: %order%"
-exit /b
-
-:runStress
-    call "%eDIR_BAT_ENGINE%\run.bat"  ^
-        "--runTests: test*.exe"       ^
-        "--exclude: mingw*-dynamic"   ^
-        "--args: stress"              ^
-        "--configurations: %order%"
-exit /b
-
-:install
     call "%eDIR_BAT_ENGINE%\run.bat" ^
-        "--custom: finalize"         ^
-        "--configurations: %order%"
+        "--runTests: test*.exe"      ^
+        "--exclude: mingw*-dynamic"  ^
+        "--configurations: all"
+
 exit /b
 
 rem ============================================================================
