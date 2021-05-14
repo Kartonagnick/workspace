@@ -1,10 +1,10 @@
 
 // [2020y-12m-05d] Idrisov Denis R.
 // [2021y-01m-20d] Idrisov Denis R.
-
+// [2021y-05m-15d] Idrisov Denis R.  103 PRE
 #pragma once
 #ifndef dMYGTEST_EXTENSION_USED_ 
-#define dMYGTEST_EXTENSION_USED_ 102
+#define dMYGTEST_EXTENSION_USED_ 103 PRE
 
 #include <mygtest/features.hpp>
 
@@ -33,7 +33,7 @@
 
 //==============================================================================
 //=== TEST_COMPONENT ===========================================================
-#include <mygtest/macro-overload-7.hpp>
+#include <mygtest/macro/overload-7.hpp>
 
 #define dUNIT_TEST_CLASS_0()                           unittest_
 #define dUNIT_TEST_CLASS_1(a1)                         unittest_##a1
