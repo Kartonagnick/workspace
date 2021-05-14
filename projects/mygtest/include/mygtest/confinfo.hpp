@@ -1,6 +1,4 @@
-﻿
-// [2021-02-09] Idrisov Denis R.
-
+﻿// [2021-02-09][20:58:32] Idrisov Denis R.
 #pragma once
 #ifndef dMYGTEST_BUILD_INFO_USED_
 #define dMYGTEST_BUILD_INFO_USED_ 102

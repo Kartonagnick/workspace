@@ -1,11 +1,9 @@
-
 // [2020y-12m-05d] Idrisov Denis R.
 // [2021y-01m-20d] Idrisov Denis R.
-// [2021y-01m-25d] Idrisov Denis R.
-
+// [2021y-02m-10d][00:36:45] Idrisov Denis R. 100
 #pragma once
 #ifndef dMYGTEST_CONFBUILD_USED_
-#define dMYGTEST_CONFBUILD_USED_ 203
+#define dMYGTEST_CONFBUILD_USED_ 102
 //================================================================================
 //================================================================================
 
@@ -45,7 +43,7 @@
 
 #define dVERSION_MAJOR      2
 #define dVERSION_MINOR      0
-#define dVERSION_PATCH      3
+#define dVERSION_PATCH      2
 
 #define dSTRINGIZE(...) #__VA_ARGS__
 #define dSSTRINGIZE(x) dSTRINGIZE(x)
