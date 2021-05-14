@@ -7,15 +7,22 @@ rem ============================================================================
 
 :main
     setlocal
+    @echo [RUN] QtCreator ...
 
     rem set "eDEBUG=ON"
-    set "suffix=lib-{COMPILER_TAG}-{BUILD_TYPE}-{ADDRESS_MODEL}-{RUNTIME_CPP}"
-
     call "%eDIR_BAT_ENGINE%\run.bat" ^
-        "--runIDE: QtCreator" ^
-        "--suffix: %suffix%"
+        "--runIDE: QtCreator"
 
-exit /b
+    if errorlevel 1 (goto :failed)
+
+:success
+    @echo [RUN] completed successfully
+exit /b 0
+
+:failed
+    @echo [RUN] finished with erros
+exit /b 1
+
 
 rem ============================================================================
 rem ============================================================================

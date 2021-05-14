@@ -1,19 +1,17 @@
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//+ created: May 15 2019 11:15:19                              +
-//+ changed: April 19 2020 08:07:24                            +
-//+ macro_overload_7.hpp                                       +
+//+ created: 2019y-05m-16d 11:15:19 May                        +
+//+ changed: 2020y-04m-19d 08:07:24 April                      +
+//+ macro/overload-7.hpp                                       +
 //+                                            Tools's library +
-//+                         Copyright @ 2020, Castle Of Dreams +
+//+                         Copyright @ 2019, Castle Of Dreams +
 //+                                     [author: Idrisov D. R] +
 //+                                   CastleOfDreams@yandex.ru +
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// [2020y-12m-05d] Idrisov Denis R.
-// [2021y-01m-20d] Idrisov Denis R.
-
 #pragma once
 #ifndef dTOOLS_MACRO_OVERLOAD_7_USED_
-#define dTOOLS_MACRO_OVERLOAD_7_USED_ 100
+#define dTOOLS_MACRO_OVERLOAD_7_USED_ 1
 
 //==============================================================================
 
@@ -118,5 +116,4 @@
 
 //==============================================================================
 //==============================================================================
-
 #endif // !dTOOLS_MACRO_OVERLOAD_7_USED_

@@ -1,4 +1,4 @@
-// [2020y-02m-10d][00:36:45] Idrisov Denis R.
+﻿// [2020y-02m-10d][00:36:45] Idrisov Denis R.
 #pragma once
 
 //==============================================================================
@@ -6,10 +6,13 @@
 #define dPCH_USED 1
 #include <mygtest/build_info/view.hpp>
 #include <mygtest/mygtest.ver>
-dVIEW_BUILD("[mygtest]", dMYGTEST)
+dVIEW_BUILD("[test mygtest]", dMYGTEST)
 //==============================================================================
 //==============================================================================
 
-#include <mygtest/pch_weak.hpp>
+#include <mygtest/pch_used.hpp>
+#include <stdexcept>
+#include <cassert>
+
 //==============================================================================
 //==============================================================================
