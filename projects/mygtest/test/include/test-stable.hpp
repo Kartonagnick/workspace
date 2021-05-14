@@ -5,7 +5,7 @@
 #define dTEST_LIST_STABLE_USED_ 1
 
 #ifndef STABLE_RELEASE
-    #error #include <test_list_stable.hpp> require #define STABLE_RELEASE
+    #error #include <test-stable.hpp> require #define STABLE_RELEASE
 #endif
 
     #define dFORBID_ZERO_SIZE_ARRAY
@@ -16,7 +16,7 @@
     #define INCLUDE_LONG_TESTS
 
 //==============================================================================
-//===== fsystem ============================================||==================
+//===== classic/modern =====================================||==================
     #define TEST_MODERN                                     // ready!
     #define TEST_CLASSIC                                    // ready!
 //==========================================================||==================

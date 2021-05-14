@@ -4,7 +4,7 @@
 #define dTEST_LIST_DEV_USED_ 1
 
 #ifdef STABLE_RELEASE
-    #error STABLE_RELEASE require #include <test_list_stable.hpp>
+    #error STABLE_RELEASE require #include <test-stable.hpp>
 #endif
 
     #define CODE_GENERATION_ON
@@ -15,7 +15,7 @@
     #define INCLUDE_LONG_TESTS
 
 //==============================================================================
-//===== fsystem ============================================||==================
+//===== classic/modern =====================================||==================
     #define TEST_MODERN                                     // ready!
     #define TEST_CLASSIC                                    // ready!
 //==========================================================||==================
