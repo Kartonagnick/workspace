@@ -7,14 +7,25 @@ rem ============================================================================
 
 :main
     setlocal
+    @echo [TESTS] run...
+
     rem set "eDEBUG=ON"
-    set "suffix=lib-{COMPILER_TAG}-{BUILD_TYPE}-{ADDRESS_MODEL}-{RUNTIME_CPP}"
 
     call "%eDIR_BAT_ENGINE%\run.bat" ^
-        "--runTests: *.exe"          ^
+        "--runTests: test*.exe"      ^
         "--exclude: mingw*-dynamic"  ^
-        "--suffix: %suffix%"
-exit /b
+        "--configurations: all"
+
+    if errorlevel 1 (goto :failed)
+
+:success
+    @echo [TESTS] completed successfully
+exit /b 0
+
+:failed
+    @echo [TESTS] finished with erros
+exit /b 1
+
 
 rem ============================================================================
 rem ============================================================================
