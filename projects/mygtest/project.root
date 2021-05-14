@@ -6,7 +6,7 @@ INCLUDE_CONFIGURATIONS =
 EXCLUDE_CONFIGURATIONS =
 
 # --- версия продукта
-VERSION = confbuild.hpp
+VERSION = mygtest.ver
 
 
 
