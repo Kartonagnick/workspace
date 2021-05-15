@@ -1,7 +1,6 @@
-
 // [2021y-02m-23d] Idrisov Denis R.
 // [2021y-02m-24d] Idrisov Denis R.
-
+// [2021y-05m-15d][00:42:36] Idrisov Denis R.
 #if defined(_MSC_VER) && _MSC_VER <= 1600
 // pragma message("Visual Studio 2010 or older")
 

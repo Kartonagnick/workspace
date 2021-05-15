@@ -1,10 +1,10 @@
-
 // [2020y-12m-05d] Idrisov Denis R.
 // [2021y-01m-20d] Idrisov Denis R.
-// [2021y-05m-15d] Idrisov Denis R.  103 PRE
+// [2021y-05m-15d][00:42:36] Idrisov Denis R. 103
+// [2021y-05m-15d][03:15:10] Idrisov Denis R. 103
 #pragma once
 #ifndef dMYGTEST_EXTENSION_USED_ 
-#define dMYGTEST_EXTENSION_USED_ 103 PRE
+#define dMYGTEST_EXTENSION_USED_ 103
 
 #include <mygtest/features.hpp>
 

@@ -1,4 +1,4 @@
-
+// [2021y-05m-15d][00:42:36] Idrisov Denis R.
 #pragma once
 #ifndef dTEST_LIST_DEV_USED_ 
 #define dTEST_LIST_DEV_USED_ 1

@@ -1,4 +1,4 @@
-
+// [2021y-05m-15d][00:42:36] Idrisov Denis R.
 #include <cassert>
 #include <cstring>
 

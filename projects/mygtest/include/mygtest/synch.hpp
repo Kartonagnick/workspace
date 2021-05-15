@@ -1,8 +1,7 @@
-
 // [2021y-02m-21d] Idrisov Denis R.
 // [2021y-02m-23d] Idrisov Denis R.
 // [2021y-02m-24d] Idrisov Denis R.
-
+// [2021y-05m-15d][00:42:36] Idrisov Denis R.
 #pragma once
 #ifndef dMYGTEST_SYNCH_USED_ 
 #define dMYGTEST_SYNCH_USED_ 102

@@ -8,6 +8,7 @@ rem ============================================================================
     @echo [MAKE] run...
 
     rem set "eDEBUG=ON"
+    set "suffix=lib-{COMPILER_TAG}-{BUILD_TYPE}-{ADDRESS_MODEL}-{RUNTIME_CPP}"
 
     set "VC08=msvc2008:64:debug:static"
     set "VC10=msvc2010:64:release:static"
@@ -31,10 +32,9 @@ rem ============================================================================
     rem for development
     rem (call :generate) && (goto :success) || (goto :failed)
 
-    rem (call :clean)    || (goto :failed)
+    (call :clean)    || (goto :failed)
     (call :build)    || (goto :failed)
     (call :runTests) || (goto :failed)
-    rem (call :runStress) || (goto :failed)
     (call :install)  || (goto :failed)
 :success
     @echo [MAKE] completed successfully
@@ -55,35 +55,31 @@ exit /b
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--generate: cmake-makefiles" ^
         "--configurations: %order%"   ^
-        "--defines: UNSTABLE_RELEASE"
+        "--defines: STABLE_RELEASE"   ^
+        "--suffix: %suffix%"
 exit /b
 
 :build
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--build: cmake-makefiles"    ^
         "--configurations: %order%"   ^
-        "--defines: STABLE_RELEASE"
+        "--defines: STABLE_RELEASE"   ^
+        "--suffix: %suffix%"
 exit /b
 
 :runTests
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--runTests: test*.exe"       ^
-        "--exclude: mingw*-dynamic"   ^
-        "--configurations: %order%"
-exit /b
-
-:runStress
-    call "%eDIR_BAT_ENGINE%\run.bat"  ^
-        "--runTests: test*.exe"       ^
-        "--exclude: mingw*-dynamic"   ^
-        "--args: stress"              ^
-        "--configurations: %order%"
+        "--exclude: *-mingw*-dynamic" ^
+        "--configurations: %order%"   ^
+        "--suffix: %suffix%"
 exit /b
 
 :install
     call "%eDIR_BAT_ENGINE%\run.bat" ^
         "--custom: finalize"         ^
-        "--configurations: %order%"
+        "--configurations: %order%"  ^
+        "--suffix: %suffix%"
 exit /b
 
 rem ============================================================================

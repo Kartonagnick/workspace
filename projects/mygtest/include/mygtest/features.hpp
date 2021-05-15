@@ -1,6 +1,6 @@
-
 // [2021y-02m-05d] Idrisov Denis R.
 // [2021y-02m-24d] Idrisov Denis R.
+// [2021y-05m-15d][00:42:36] Idrisov Denis R.
 #pragma once
 #ifndef dMYGTEST_FEATURES_USED_
 #define dMYGTEST_FEATURES_USED_ 102

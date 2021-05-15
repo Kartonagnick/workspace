@@ -1,6 +1,34 @@
 
 **История изменений**  
 
+**Версия 0.3.7 (предварительная)**  
+----------------------------------
+1) upd workspace/init.bat        037  
+
+2) улучшение mygtest             204  
+   - модернизация macro
+     - del: macro-overload-7.hpp   001  
+     - add: macro/overload-7.hpp   001  
+     - upd: mygtest/extension.hpp  103
+   - улучшено логгирование конфигурации сборки:  
+     - del: confbuild.hpp  
+     - del: confinfo.hpp  
+     - add: build_info           100  
+       - add: build_info.hpp       100  
+       - add: compilers.hpp        100  
+       - add: confbuild.hpp        100  
+       - add: view.hpp             100  
+   - добавлена версия mygtest:  
+     - add: mygtest.ver          204  
+   - модернизирован deploy  
+     - make-debug.bat  
+     - make.bat  
+     - run-msvc.bat  
+     - run-qtcreator.bat  
+     - run-test.bat  
+   - исправлены ошибки в задачах  
+
+
 **Версия 0.3.6 (предварительная)**  
 ----------------------------------
 1) исправлен баг: `backup.bat`
