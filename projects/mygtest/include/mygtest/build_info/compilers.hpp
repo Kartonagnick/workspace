@@ -1,9 +1,10 @@
 // [2021y-04m-29d][14:27:04] Idrisov Denis R. 100
 // [2021y-05m-15d][23:54:07] Idrisov Denis R. 101
 // [2021y-05m-15d][21:39:59] Idrisov Denis R. 101
+// [2021y-05m-17d][00:12:53] Idrisov Denis R. 102
 #pragma once
 #ifndef dTOOLS_COMPILERS_USED_ 
-#define dTOOLS_COMPILERS_USED_ 101
+#define dTOOLS_COMPILERS_USED_ 102
 //==============================================================================
 //=== dMESSAGE =================================================================
 
@@ -22,24 +23,24 @@
     #ifdef __cplusplus
         dMESSAGE("__cplusplus: " dSSTRINGIZE(__cplusplus)) 
 
-        #if __cplusplus >= 201103L
-            dMESSAGE("c++11: enabled") 
-        #endif
-
-        #if __cplusplus >= 201402L
-            dMESSAGE("c++14: enabled") 
-        #endif
-
-        #if __cplusplus >= 201703L
-            dMESSAGE("c++17: enabled") 
-        #endif
-
-        #if __cplusplus >= 202002L
-            dMESSAGE("c++20: enabled") 
-        #endif
-
-        #if __cplusplus < 202002L
+        #if __cplusplus < 201103L
             dMESSAGE("c++old: enabled") 
+        #else
+            #if __cplusplus >= 201103L
+                dMESSAGE("c++11: enabled") 
+            #endif
+
+            #if __cplusplus >= 201402L
+                dMESSAGE("c++14: enabled") 
+            #endif
+
+            #if __cplusplus >= 201703L
+                dMESSAGE("c++17: enabled") 
+            #endif
+
+            #if __cplusplus >= 202002L
+                dMESSAGE("c++20: enabled") 
+            #endif
         #endif
 
     #else
