@@ -4,7 +4,7 @@
 // [2021y-05m-17d][00:12:53] Idrisov Denis R. 102
 #pragma once
 #ifndef dTOOLS_COMPILERS_USED_ 
-#define dTOOLS_COMPILERS_USED_ 102
+#define dTOOLS_COMPILERS_USED_ 102 PRE
 //==============================================================================
 //=== dMESSAGE =================================================================
 
@@ -68,7 +68,7 @@
         #ifdef _MSVC_LANG
             #pragma message("_MSVC_LANG ........ " dSSTRINGIZE(_MSVC_LANG))
         #else
-            #pragma message("_MSVC_LANG ........  not specified")
+            #pragma message("_MSVC_LANG ........ not specified")
         #endif
 
         #if defined(_MSC_EXTENSIONS) && _MSC_EXTENSIONS != 0

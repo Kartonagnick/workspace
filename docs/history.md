@@ -1,6 +1,15 @@
 
 **История изменений**  
 
+**Версия 0.3.8 (предварительная)**  
+----------------------------------
+1) upd workspace/init.bat        038 PRE 
+
+2) upd: mygtest                205 PRE 
+     - upd: build_info           101 PRE 
+       - bug: compilers.hpp        102 PRE 
+
+
 **Версия 0.3.7 (предварительная)**  
 ----------------------------------
 1) upd workspace/init.bat        037  
@@ -15,9 +24,9 @@
      - del: confinfo.hpp  
      - add: build_info           100  
        - add: build_info.hpp       100  
-       - add: compilers.hpp        100  
-       - add: confbuild.hpp        100  
-       - add: view.hpp             100  
+       - add: compilers.hpp        101  
+       - add: confbuild.hpp        101  
+       - add: view.hpp             103  
    - добавлена версия mygtest:  
      - add: mygtest.ver          204  
    - модернизирован deploy  
