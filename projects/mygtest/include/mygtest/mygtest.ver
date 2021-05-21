@@ -2,13 +2,14 @@
 // [2021y-05m-15d][00:42:36] Idrisov Denis R. 204
 // [2021y-05m-15d][03:15:37] Idrisov Denis R. 204
 // [2021y-05m-17d][01:45:08] Idrisov Denis R. 205
+// [2021y-05m-21d][02:41:45] Idrisov Denis R. 206 PRE
 #pragma once
 #ifndef dMYGTEST_VERSION_USED_ 
-#define dMYGTEST_VERSION_USED_ 205
+#define dMYGTEST_VERSION_USED_ 206 PRE
 
 #define dMYGTEST_MAJOR 2
 #define dMYGTEST_MINOR 0
-#define dMYGTEST_PATCH 5
+#define dMYGTEST_PATCH 6
 
 //==============================================================================
 //==============================================================================
