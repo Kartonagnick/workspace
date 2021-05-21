@@ -1,18 +1,12 @@
 // [2021y-02m-05d] Idrisov Denis R.
 // [2021y-02m-24d] Idrisov Denis R.
 // [2021y-05m-15d][00:42:36] Idrisov Denis R.
+// [2021y-05m-21d][01:56:35] Idrisov Denis R. 103 PRE
 #pragma once
 #ifndef dMYGTEST_FEATURES_USED_
-#define dMYGTEST_FEATURES_USED_ 102
+#define dMYGTEST_FEATURES_USED_ 103 PRE
 
-//==============================================================================
-//=== dMESSAGE =================================================================
-
-#ifdef _MSC_VER
-    #define dMESSAGE(...)  __pragma(message(__VA_ARGS__))
-#else
-    #define dMESSAGE(...) 
-#endif
+#include "build_info/dmessage.hpp"
 
 //==============================================================================
 //=== dHAS_NULLPTR =============================================================
