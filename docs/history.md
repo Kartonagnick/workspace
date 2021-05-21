@@ -1,12 +1,26 @@
 
 **История изменений**  
 
+[![V]][0] **Версия 0.3.9 (предварительная)**  
+----------------------------------
+[2021y-05m-21d][23:27:45] #47_mygtest PRE  
+1) upd: workspace/init.bat      (039) PRE  
+2) upd: .gitignore  
+3) upd: mygtest                 (206) PRE  
+     - upd: deploy  
+     - upd: mygtest.hpp         (206) PRE  
+     - upd: mygtest.ver         (206) PRE  
+     - upd: features.hpp        (103) PRE  
+     - upd: build_info          (103) PRE  
+       - upd: compilers         (103) PRE  
+       - upd: dmessage          (001) PRE  
+
 [![V]][0] **Версия 0.3.8 (предварительная)**  
 ----------------------------------
-1) upd workspace/init.bat        038
+1) upd workspace/init.bat        038  
 
-2) upd: mygtest                205
-     - upd: build_info           101
+2) upd: mygtest                205  
+     - upd: build_info           101  
        - bug: compilers.hpp        102 [![V]][0]  
 
 
