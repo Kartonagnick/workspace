@@ -2,20 +2,14 @@
 // [2021y-05m-15d][23:54:07] Idrisov Denis R. 101
 // [2021y-05m-15d][21:39:59] Idrisov Denis R. 101
 // [2021y-05m-17d][01:46:09] Idrisov Denis R. 102
+// [2021y-05m-19d][00:54:49] Idrisov Denis R. 103 (PRE)
+// [2021y-05m-19d][16:52:00] Idrisov Denis R. 103 (PRE)
+// [2021y-05m-21d][01:59:33] Idrisov Denis R. 103 PRE
 #pragma once
 #ifndef dTOOLS_COMPILERS_USED_ 
-#define dTOOLS_COMPILERS_USED_ 102
-//==============================================================================
-//=== dMESSAGE =================================================================
+#define dTOOLS_COMPILERS_USED_ 103 PRE
 
-#ifdef _MSC_VER
-    #define dMESSAGE(...)  __pragma(message(__VA_ARGS__))
-#else
-    #define dMESSAGE(...) 
-#endif
-
-#define dSTRINGIZE(...) #__VA_ARGS__
-#define dSSTRINGIZE(x) dSTRINGIZE(x)
+#include "dmessage.hpp"
 
 //==============================================================================
 //==============================================================================
@@ -82,9 +76,11 @@
 
         #elif _MSC_VER == 1928 
             #if _MSC_FULL_VER == 192829915
-                #pragma message("msvc2019: 16.9.5") 
+                #pragma message("msvc2019: 16.9.5 (6)") 
             #elif _MSC_FULL_VER == 192829913
                 #pragma message("msvc2019: 16.9.2") 
+            #elif _MSC_FULL_VER == 192829912
+                #pragma message("msvc2019: 16.9.1") 
             #elif _MSC_FULL_VER == 192829334
                 #pragma message("msvc2019: 16.8.2") 
             #elif _MSC_FULL_VER == 192829333
@@ -152,6 +148,8 @@
         #elif _MSC_VER == 1916 
             #if _MSC_FULL_VER == 191627045
                 #pragma message("msvc2017: 15.9.35 (36)") 
+			#elif _MSC_FULL_VER == 191627034
+                #pragma message("msvc2017: 15.9.17") 
             #elif _MSC_FULL_VER == 191627030
                 #pragma message("msvc2017: 15.9.11") 
             #elif _MSC_FULL_VER == 191627027
