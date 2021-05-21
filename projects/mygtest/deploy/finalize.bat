@@ -20,8 +20,6 @@ rem =========================================================================
     if not defined eGROUP (
         (call :copyIncludes) && (goto :success) || (goto :failed)
     )
-
-    set "eDIR_INSTALL=%eDIR_INSTALL%\%eEXPANDED_SUFFIX%"
     (call :copyLibraries) || (goto :failed)
 :success
     @echo [FINALIZE] completed successfully
@@ -42,9 +40,10 @@ rem =========================================================================
 exit /b
 
 :copyDirectory
+    if not defined eDEBUG (goto :doDirect)
     @echo  src: %eDIR_SOURCE%\%~1
     @echo  dst: %eDIR_INSTALL%\include
-
+:doDirect
     xcopy "%eDIR_SOURCE%\%~1" ^
         "%eDIR_INSTALL%\include"\ /e /y /i >nul
 
@@ -60,8 +59,8 @@ exit /b
 exit /b
 
 :copyFiles
-    set "src=%eDIR_PRODUCT%"
-    set "dst=%eDIR_INSTALL%"
+    set "src=%eDIR_PRODUCT%\lib-mygtest"
+    set "dst=%eDIR_INSTALL%\lib-%eEXPANDED_SUFFIX%"
     if not defined eDEBUG (goto :doCopy)
     @echo   src: %src%
     @echo   dst: %dst%
