@@ -1,7 +1,8 @@
-// [2021y-05m-21d][22:24:50] Idrisov Denis R. 001 PRE
+// [2021y-05m-21d][22:24:50] Idrisov Denis R. 001 (PRE)
+// [2021y-05m-22d][00:01:55] Idrisov Denis R. 001
 #pragma once
 #ifndef dTOOLS_DMESSAGE_USED_ 
-#define dTOOLS_DMESSAGE_USED_ 001 PRE
+#define dTOOLS_DMESSAGE_USED_ 001
 
 //==============================================================================
 //=== dSTRINGIZE ===============================================================

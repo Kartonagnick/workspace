@@ -4,10 +4,11 @@
 // [2021y-05m-17d][01:46:09] Idrisov Denis R. 102
 // [2021y-05m-19d][00:54:49] Idrisov Denis R. 103 (PRE)
 // [2021y-05m-19d][16:52:00] Idrisov Denis R. 103 (PRE)
-// [2021y-05m-21d][01:59:33] Idrisov Denis R. 103 PRE
+// [2021y-05m-21d][01:59:33] Idrisov Denis R. 103 (PRE)
+// [2021y-05m-22d][00:01:23] Idrisov Denis R. 103
 #pragma once
 #ifndef dTOOLS_COMPILERS_USED_ 
-#define dTOOLS_COMPILERS_USED_ 103 PRE
+#define dTOOLS_COMPILERS_USED_ 103
 
 #include "dmessage.hpp"
 

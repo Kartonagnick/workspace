@@ -4,6 +4,7 @@
 # 2020y-12m-21d. WorkSpace project.
 # 2021y-01m-15d. WorkSpace project.
 # 2021y-02m-08d. WorkSpace project.
+# [2021y-05m-22d] [00:28:58] Idrisov Denis R.
 ################################################################################
 ################################################################################
 
@@ -24,8 +25,18 @@ else()
     message(STATUS "gSTABLE_RELEASE: OFF")
 endif()
 
-make_target()
-make_target(PATH_TO_SOURCES "test")
+make_target(
+#    PREPROCESSOR 
+#        "dHIDE_MINGW_MESSAGE=1"
+#        "dHIDE_MSVC_MESSAGE=1"
+)
+
+make_target(
+    PATH_TO_SOURCES "test"
+#    PREPROCESSOR 
+#        "dHIDE_MINGW_MESSAGE=1"
+#        "dHIDE_MSVC_MESSAGE=1"
+)
 
 ################################################################################
 ################################################################################
