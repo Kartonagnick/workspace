@@ -3,12 +3,13 @@
 // [2021y-05m-17d][01:45:39] Idrisov Denis R. 101
 // [2021y-05m-19d][01:54:51] Idrisov Denis R. 102 (PRE)
 // [2021y-05m-19d][22:29:40] Idrisov Denis R. 102
-// [2021y-05m-21d][02:39:45] Idrisov Denis R. 103 PRE
+// [2021y-05m-21d][02:39:45] Idrisov Denis R. 103 (PRE)
+// [2021y-05m-22d][00:00:47] Idrisov Denis R. 103
 //==============================================================================
 //==============================================================================
 #pragma once
 #ifndef dTOOLS_BUILD_INFO_USED_ 
-#define dTOOLS_BUILD_INFO_USED_ 103 PRE
+#define dTOOLS_BUILD_INFO_USED_ 103
 
 #define dBUILD_INFO_MAJOR 1
 #define dBUILD_INFO_MINOR 0

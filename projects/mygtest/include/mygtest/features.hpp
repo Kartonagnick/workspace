@@ -1,10 +1,11 @@
 // [2021y-02m-05d] Idrisov Denis R.
 // [2021y-02m-24d] Idrisov Denis R.
 // [2021y-05m-15d][00:42:36] Idrisov Denis R.
-// [2021y-05m-21d][01:56:35] Idrisov Denis R. 103 PRE
+// [2021y-05m-21d][01:56:35] Idrisov Denis R. 103 (PRE)
+// [2021y-05m-22d][00:00:10] Idrisov Denis R. 103
 #pragma once
 #ifndef dMYGTEST_FEATURES_USED_
-#define dMYGTEST_FEATURES_USED_ 103 PRE
+#define dMYGTEST_FEATURES_USED_ 103
 
 #include "build_info/dmessage.hpp"
 

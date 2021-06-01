@@ -1,19 +1,25 @@
 
+Основан
+-------
+28 декабря 2020 года, в 01:00:16, Картонажником.  
+[2020y-01m-28d][01:00:16] Idrisov Denis R.  
+[2020y-01m-28d][01:00:16] birthday of the project  
+
 **История изменений**  
 
 [![V]][0] **Версия 0.3.9 (предварительная)**  
 ----------------------------------
-[2021y-05m-21d][23:27:45] #47_mygtest PRE  
-1) upd: workspace/init.bat      (039) PRE  
+[2021y-05m-21d][23:58:29] #47_mygtest  
+1) upd: workspace/init.bat      (039)  
 2) upd: .gitignore  
-3) upd: mygtest                 (206) PRE  
+3) upd: mygtest                 (206)  
      - upd: deploy  
-     - upd: mygtest.hpp         (206) PRE  
-     - upd: mygtest.ver         (206) PRE  
-     - upd: features.hpp        (103) PRE  
-     - upd: build_info          (103) PRE  
-       - upd: compilers         (103) PRE  
-       - upd: dmessage          (001) PRE  
+     - upd: mygtest.hpp         (206)  
+     - upd: mygtest.ver         (206)  
+     - upd: features.hpp        (103)  
+     - upd: build_info          (103)  
+       - upd: compilers         (103)  
+       - upd: dmessage          (001)  
 
 [![V]][0] **Версия 0.3.8 (предварительная)**  
 ----------------------------------

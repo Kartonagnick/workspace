@@ -1,13 +1,14 @@
 // [2020y-12m-05d] Idrisov Denis R.
 // [2021y-01m-20d] Idrisov Denis R.
 // [2021y-05m-15d][00:42:36] Idrisov Denis R.
-// [2021y-15m-21d][23:10:07] Idrisov Denis R. 206 PRE
+// [2021y-15m-21d][23:10:07] Idrisov Denis R. 206 (PRE)
+// [2021y-15m-21d][23:58:59] Idrisov Denis R. 206
 //==============================================================================
 //==============================================================================
 
 #pragma once
 #ifndef dMYGTEST_USED_ 
-#define dMYGTEST_USED_ 206 PRE
+#define dMYGTEST_USED_ 206
 
 #if defined(__GNUC__)
     #pragma GCC system_header

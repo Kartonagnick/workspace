@@ -84,27 +84,23 @@ rem ............................................................................
 exit /b
 
 :generate
-    call "%eDIR_BAT_ENGINE%\run.bat"     ^
-        "--generate: cmake-makefiles"    ^
-        "--configurations: %order%"      ^
-        "--defines: STABLE_RELEASE"      ^
-        "--defines: dHIDE_MINGW_MESSAGE" ^
-        "--defines: dHIDE_MSVC_MESSAGE"
+    call "%eDIR_BAT_ENGINE%\run.bat"  ^
+        "--generate: cmake-makefiles" ^
+        "--configurations: %order%"   ^
+        "--defines: STABLE_RELEASE"
 exit /b
 
 :build
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--build: cmake-makefiles"    ^
         "--configurations: %order%"   ^
-        "--defines: STABLE_RELEASE"   ^
-        "--defines: dHIDE_MINGW_MESSAGE" ^
-        "--defines: dHIDE_MSVC_MESSAGE"
+        "--defines: STABLE_RELEASE"
 exit /b
 
 :runTests
     call "%eDIR_BAT_ENGINE%\run.bat"  ^
         "--runTests: test*.exe"       ^
-        "--exclude: *-mingw*-dynamic" ^
+        "--exclude: *mingw*-dynamic"  ^
         "--configurations: %order%"
 exit /b
 
